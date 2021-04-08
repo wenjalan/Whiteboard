@@ -1,6 +1,8 @@
+import React from "react";
+
 function App() {
-  // return LandingPage();
-    return RoomPage();
+    // return <LandingPage />;
+    return <RoomPage />;
 }
 
 function RoomPage() {
@@ -17,10 +19,10 @@ function ControlsBar() {
         <div style={styles.controls}>
             <div style={styles.roomInfo}>#XXXX・0:00</div>
             <div style={styles.divider}/>
-            <div style={styles.ideaInput}>hello</div>
-            <div style={styles.controlButton}>hello</div>
+            <input type={"text"} placeholder="Idea goes here" style={styles.ideaInput}/>
+            <button style={styles.controlButton}>Send</button>
             <div style={styles.divider}/>
-            <div style={styles.controlButton}>hello</div>
+            <button style={styles.controlButton}>Save</button>
         </div>
     );
 }
@@ -38,7 +40,7 @@ const styles = {
         marginLeft: 16,
         marginBottom: 16,
         height: 50,
-        width: "80%",
+        width: "75%",
         border: "1px solid #808080",
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
         borderRadius: 5,
@@ -60,12 +62,24 @@ const styles = {
 
     ideaInput: {
         flex: 5,
+        marginLeft: 16,
+        marginRight: 16,
+        fontFamily: "Roboto",
+        fontSize: 14,
+        border: "0px solid #808080",
+        borderRadius: 5,
+        height: 30,
+        padding: 0,
         // backgroundColor: "cyan",
     },
 
     controlButton: {
-        width: 50,
-        // backgroundColor: "purple",
+        width: 45,
+        height: 45,
+        margin: 2.5,
+        border: "none",
+        textAlign: "center",
+        backgroundColor: "transparent",
     },
 
     divider: {
