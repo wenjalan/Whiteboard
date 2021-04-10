@@ -8,7 +8,7 @@ function App() {
 function RoomPage() {
     return (
         <div style={styles.container}>
-            test
+            <IdeaTimeline/>
             <ControlsBar/>
         </div>
     );
@@ -27,10 +27,92 @@ function ControlsBar() {
     );
 }
 
+function IdeaTimeline(props) {
+
+    // todo: replace these with real ideas
+    ideas = [
+        "hello longer",
+        "world",
+        "my",
+        "name",
+        "is",
+        "james",
+        "hello longer",
+        "world",
+        "my",
+        "name",
+        "is",
+        "james",
+        "hello longer",
+        "world",
+        "my",
+        "name",
+        "is",
+        "james",
+        "hello longer",
+        "world",
+        "my",
+        "name",
+        "is",
+        "james wendell is the online persona created by alan wen, for the purpose of preserving some anominity",
+    ];
+
+    return (
+        <div style={styles.ideaTimeline}>
+            {ideas.map(idea => (
+                <Idea idea={idea}/>
+            ))}
+        </div>
+    );
+}
+
+function Idea(props) {
+    return (
+        <div style={styles.ideaContainer}>
+            <div style={styles.ideaNumber}>#0</div>
+            <div style={styles.divider}/>
+            <div style={styles.ideaText}>{props.idea}</div>
+        </div>
+    );
+}
+
 const styles = {
     container: {
         display: "flex",
-        backgroundColor: "red",
+        // backgroundColor: "red",
+    },
+
+    ideaTimeline: {
+        display: "flex",
+        flexDirection: "column",
+        marginBottom: 56,
+        marginLeft: 8,
+    },
+
+    ideaContainer: {
+        height: 50,
+        width: "fit-content",
+        marginBottom: 16,
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        // backgroundColor: "orange",
+        borderRadius: 5,
+        border: "1px solid #808080",
+    },
+
+    ideaNumber: {
+        width: 50,
+        textAlign: "center",
+        fontFamily: "Roboto",
+        color: "#808080",
+    },
+
+    ideaText: {
+        paddingLeft: 16,
+        paddingRight: 16,
+        fontFamily: "Roboto",
     },
 
     controls: {
@@ -40,7 +122,8 @@ const styles = {
         marginLeft: 16,
         marginBottom: 16,
         height: 50,
-        width: "75%",
+        width: "90%",
+        backgroundColor: "#FFFFFF",
         border: "1px solid #808080",
         boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
         borderRadius: 5,
